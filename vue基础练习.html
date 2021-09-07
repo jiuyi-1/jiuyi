@@ -135,12 +135,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-      const app = new Vue({
-        el: '#app',
-        data: {
-          isShow: true,
-          list: ['在上方添加待办事项吧'],
-          inputValue: '',
+      const app = {
+        data() {
+          return {
+            isShow: true,
+            list: ['在上方添加待办事项吧'],
+            inputValue: '',
+          }
         },
         methods: {
           add: function () {
@@ -155,7 +156,8 @@
             this.list = '';
           }
         },
-      })
+      }
+      Vue.createApp(app).mount('#app');
     </script>
   </body>
 </html>
